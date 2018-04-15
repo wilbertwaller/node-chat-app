@@ -24,6 +24,10 @@ class Users {
     const users = this.users.filter((user) => user.room === room);
     return users.map((user) => user.name);
   }
+  getRoomsList () {
+    const allRooms = this.users.map((user) => user.room);
+    return [...new Set(allRooms)]; // return unique rooms
+  }
 }
 
 module.exports = {Users};
